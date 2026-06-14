@@ -49,8 +49,10 @@ repository public.
       pointing to the repo URL.
 - [x] **Contact emails confirmed** in the paper: `m.jawed@mannatai.com`,
       `mdjawed2025@iitkalumni.org`.
-- [ ] **Push this staging tree** to the GitHub repo (contents become repo root).
-      Ensure the repo is live (at least README) when the paper is posted.
+- [x] **Pushed** to <https://github.com/JawedCIA/mizaan-eval> (2026-06-14,
+      commit `332a432`, 86 files; force-replaced the GitHub stub README).
+      Standalone local clone lives at `../../../../../mizaan-eval` (sibling of
+      the project) for future updates. Repo is live.
 - [ ] Replace `TODO-arxiv-id` / `TODO-link` (arXiv id + PDF) once known.
 - [ ] `TODO-mizaan-repo-link` (the Mizaan backend, needed for Tier-2): decide
       whether the backend is published; if not, Tier-2 is reproducible only by
