@@ -1,0 +1,11 @@
+## Clustered Human Corrections ({{ corrections | length }})
+{% for c in corrections %}
+
+### Correction {{ loop.index }}
+Work item: {{ c.work_item_description }}
+AI score: {{ c.original_score }} -> Human score: {{ c.adjusted_score }}
+Human reasoning: {{ c.reasoning }}
+{% endfor %}
+
+## Your Task
+Draft the single new scoring criterion that, had it been in the rubric, would have made these human corrections unnecessary. Respond as JSON.

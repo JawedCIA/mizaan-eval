@@ -1,0 +1,23 @@
+## Work Item (Type: {{ work_item_type }})
+
+{{ work_item_description }}
+
+{% if work_item_context %}
+## Additional Context
+{{ work_item_context | tojson(indent=2) }}
+{% endif %}
+
+{% if retrieved_examples %}
+## Past Human Feedback (Learn from these corrections)
+{% for ex in retrieved_examples %}
+
+### Example {{ loop.index }}
+Original AI score: {{ ex.original_score | default("N/A") }}
+Human decision: {{ ex.decision | default("N/A") }}
+{% if ex.adjusted_score %}Human adjusted score: {{ ex.adjusted_score }}{% endif %}
+{% if ex.reasoning %}Human reasoning: {{ ex.reasoning }}{% endif %}
+{% endfor %}
+{% endif %}
+
+## Your Evaluation
+Analyze the work item above and provide your scoring response as JSON.
