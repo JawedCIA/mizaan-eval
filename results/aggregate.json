@@ -1,0 +1,356 @@
+{
+  "runs": [
+    1,
+    2,
+    3
+  ],
+  "n": 3,
+  "cold_agreement": {
+    "agreement_rate": {
+      "values": [
+        0.8796,
+        0.8796,
+        0.8889
+      ],
+      "mean": 0.8827,
+      "sd": 0.0053
+    },
+    "mean_gap": {
+      "values": [
+        0.6898,
+        0.6944,
+        0.7319
+      ],
+      "mean": 0.7054,
+      "sd": 0.0231
+    },
+    "warm_eq_cold_violations": [
+      0,
+      0,
+      0
+    ]
+  },
+  "instance_learning": {
+    "sim_delta_all": {
+      "values": [
+        0.328,
+        0.338,
+        0.312
+      ],
+      "mean": 0.326,
+      "sd": 0.0131
+    },
+    "neutral_delta_all": {
+      "values": [
+        0.1276,
+        0.1259,
+        0.1121
+      ],
+      "mean": 0.1218,
+      "sd": 0.0085
+    },
+    "sim_delta_swe": {
+      "values": [
+        0.3933,
+        0.4033,
+        0.3467
+      ],
+      "mean": 0.3811,
+      "sd": 0.0302
+    },
+    "sim_delta_re": {
+      "values": [
+        0.23,
+        0.24,
+        0.26
+      ],
+      "mean": 0.2433,
+      "sd": 0.0153
+    },
+    "re_neutral_leak": {
+      "values": [
+        0.37,
+        0.365,
+        0.325
+      ],
+      "mean": 0.3533,
+      "sd": 0.0247
+    },
+    "swe_neutral_delta": {
+      "values": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "sd": 0.0
+    }
+  },
+  "consolidation_re_sim": {
+    "pre_learning": {
+      "warm": {
+        "values": [
+          8.22,
+          8.25,
+          8.44
+        ],
+        "mean": 8.3033,
+        "sd": 0.1193
+      },
+      "cold": {
+        "values": [
+          8.22,
+          8.25,
+          8.44
+        ],
+        "mean": 8.3033,
+        "sd": 0.1193
+      },
+      "auditor": {
+        "values": [
+          8.21,
+          8.25,
+          8.24
+        ],
+        "mean": 8.2333,
+        "sd": 0.0208
+      },
+      "exemplars": [
+        0,
+        0,
+        0
+      ]
+    },
+    "instance": {
+      "warm": {
+        "values": [
+          8.5,
+          8.5,
+          8.5
+        ],
+        "mean": 8.5,
+        "sd": 0.0
+      },
+      "cold": {
+        "values": [
+          8.27,
+          8.26,
+          8.24
+        ],
+        "mean": 8.2567,
+        "sd": 0.0153
+      },
+      "auditor": {
+        "values": [
+          8.21,
+          8.22,
+          8.14
+        ],
+        "mean": 8.19,
+        "sd": 0.0436
+      },
+      "exemplars": [
+        49,
+        49,
+        49
+      ]
+    },
+    "post_promotion": {
+      "warm": {
+        "values": [
+          8.39,
+          8.4,
+          8.39
+        ],
+        "mean": 8.3933,
+        "sd": 0.0058
+      },
+      "cold": {
+        "values": [
+          8.39,
+          8.4,
+          8.39
+        ],
+        "mean": 8.3933,
+        "sd": 0.0058
+      },
+      "auditor": {
+        "values": [
+          8.28,
+          8.18,
+          8.2
+        ],
+        "mean": 8.22,
+        "sd": 0.0529
+      },
+      "exemplars": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "leakage_re_neutral_warm": {
+    "pre": {
+      "values": [
+        7.71,
+        7.735,
+        7.75
+      ],
+      "mean": 7.7317,
+      "sd": 0.0202
+    },
+    "instance": {
+      "values": [
+        8.125,
+        8.17,
+        8.075
+      ],
+      "mean": 8.1233,
+      "sd": 0.0475
+    },
+    "post_promotion": {
+      "values": [
+        7.68,
+        7.755,
+        7.72
+      ],
+      "mean": 7.7183,
+      "sd": 0.0375
+    }
+  },
+  "swe_sim_no_promotion": {
+    "instance_warm": {
+      "values": [
+        8.1667,
+        8.1867,
+        8.28
+      ],
+      "mean": 8.2111,
+      "sd": 0.0605
+    },
+    "post_warm": {
+      "values": [
+        8.2467,
+        8.22,
+        8.2667
+      ],
+      "mean": 8.2444,
+      "sd": 0.0234
+    },
+    "instance_cold": {
+      "values": [
+        7.7733,
+        7.7833,
+        7.9333
+      ],
+      "mean": 7.83,
+      "sd": 0.0896
+    },
+    "post_cold": {
+      "values": [
+        7.8067,
+        7.7533,
+        7.82
+      ],
+      "mean": 7.7933,
+      "sd": 0.0353
+    }
+  },
+  "promotion_decisions": [
+    [
+      {
+        "draft": {
+          "id": "1f65f500-24bb-4832-ada3-7d2c9a20fcb5",
+          "rubric": "re-listing-v1",
+          "target_dimension": "Credibility",
+          "cluster_size": 10,
+          "amendment_text": "Reward honest disclosure of limitations and drawbacks, as this enhances the credibility of the listing.",
+          "rationale": "The corrections consistently emphasized the importance of disclosing limitations to signal credibility, suggesting that transparency should be rewarded."
+        },
+        "decision": "approve",
+        "decided_by": "human reviewer (author), via interactive gate",
+        "criterion": "faithfully expresses pre-registered rule R1",
+        "ts": 1781313204.7767475
+      },
+      {
+        "note": "swe-workitem-v1 produced 0 drafts: the 15 S1 corrections span scattered subject domains and did not form clusters >= 3 at CLUSTER_SIMILARITY_THRESHOLD=0.55 (missed-promotion limitation, reported in paper).",
+        "ts": 1781313204.7767491
+      }
+    ],
+    [
+      {
+        "draft": {
+          "id": "d4afa4e0-026f-4684-9e49-66e103898bf4",
+          "rubric": "re-listing-v1",
+          "target_dimension": "Credibility",
+          "cluster_size": 10,
+          "amendment_text": "Reward honest disclosure of limitations and potential drawbacks, as this enhances the overall credibility of the listing.",
+          "rationale": "The corrections consistently emphasized the importance of transparency regarding limitations, indicating that such disclosures should be positively recognized in scoring."
+        },
+        "decision": "approve",
+        "decided_by": "human reviewer (author), via interactive gate",
+        "criterion": "faithfully expresses pre-registered rule R1; consistent with run-1 approval",
+        "ts": 1781356363.507959
+      },
+      {
+        "note": "swe-workitem-v1 produced 0 drafts at CLUSTER_SIMILARITY_THRESHOLD=0.55 (scattered subject domains, no cluster >= 3) \u2014 reproduces run-1 missed-promotion finding.",
+        "ts": 1781356363.5079596
+      }
+    ],
+    [
+      {
+        "draft": {
+          "id": "16ef85ec-8293-477b-aaa7-c16fe89f8453",
+          "rubric": "re-listing-v1",
+          "target_dimension": "Credibility",
+          "cluster_size": 10,
+          "amendment_text": "Reward honest disclosure of limitations and drawbacks, as this enhances the credibility of the listing.",
+          "rationale": "The corrections consistently emphasized the importance of transparent communication regarding limitations, which signals credibility and should be positively reinforced."
+        },
+        "decision": "approve",
+        "decided_by": "human reviewer (author), via interactive gate",
+        "criterion": "faithfully expresses pre-registered rule R1; verbatim-identical to run-1 draft",
+        "ts": 1781358340.7446613
+      },
+      {
+        "note": "swe-workitem-v1: 0 drafts at 0.55 (reproduces runs 1-2 missed-promotion finding).",
+        "ts": 1781358340.744663
+      }
+    ]
+  ],
+  "canary": [
+    {
+      "probes": 10,
+      "moved_by_bad_lesson": 8,
+      "spot_checked": 1
+    },
+    {
+      "probes": 10,
+      "moved_by_bad_lesson": 9,
+      "spot_checked": 4
+    },
+    {
+      "probes": 10,
+      "moved_by_bad_lesson": 7,
+      "spot_checked": 0
+    }
+  ],
+  "cost_phase_a": [
+    {
+      "items": 108,
+      "mean_tokens": 0,
+      "mean_latency_ms": 13606.9
+    },
+    {
+      "items": 108,
+      "mean_tokens": 0,
+      "mean_latency_ms": 15275.7
+    },
+    {
+      "items": 108,
+      "mean_tokens": 0,
+      "mean_latency_ms": 14062.9
+    }
+  ]
+}

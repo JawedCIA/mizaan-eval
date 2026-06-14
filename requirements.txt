@@ -1,0 +1,11 @@
+# Mizaan evaluation artifacts — Python >= 3.10
+#
+# Tier 1 (reproduce paper numbers + figures, offline):
+matplotlib>=3.7
+#   eval_aggregate.py and eval_offline.py use only the Python standard library.
+#   eval_figures.py needs matplotlib.
+#
+# Tier 2 (full re-run against a live Mizaan API; optional):
+httpx>=0.27          # eval_runner.py, demo_*.py, eval_prepare_datasets.py (GitHub fetch)
+openpyxl>=3.1        # eval_prepare_datasets.py — ONLY if reconstructing the RE split
+#                      from a local commercial spreadsheet (not provided here).

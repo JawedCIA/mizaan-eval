@@ -1,0 +1,50 @@
+% Figure 2 — End-to-end workflow for a SINGLE item (temporal order).
+% Requires the mz* styles from main.tex preamble. Absolute coords (cm).
+\begin{tikzpicture}
+
+  \node[mzbox=mzInk]      (w)    at (0,0.2)      {Work\\item};
+  \node[mzstore=mzVector] (ret)  at (2.6,1.6)    {\textbf{1.}~Retrieve\\exemplars};
+  \node[mzbox=mzPrimary]  (cold) at (5.4,0.6)    {\textbf{2.}~Primary\\\textsc{cold}};
+  \node[mzbox=mzPrimary]  (warm) at (5.4,2.0)    {\textbf{3.}~Primary\\\textsc{warm}};
+  \node[mzbox=mzAuditor]  (aud)  at (5.4,-1.3)   {\textbf{4.}~Auditor\\independent};
+  \node[mzbox=mzRouter]   (rt)   at (8.5,0.3)    {\textbf{5.}~Router\\warm\,/\,cold gaps};
+
+  \node[mzbox=mzInk]      (aa)   at (11.7,1.8)   {Auto-accept};
+  \node[mzbox=mzInk]      (aal)  at (11.7,0.4)   {Auto-accept\\(learned)};
+  \node[mzbox=mzHuman]    (hr)   at (11.7,-1.2)  {Human\\review};
+
+  % --- Item fan-out: cold + auditor get the item; exemplars feed WARM only -
+  \draw[mzedge] (w) -- (ret);
+  \draw[mzedge] (w.east) -- (cold.west);
+  \draw[mzedge] (w.south) |- (aud.west);
+  \draw[mzedge] (ret) -- (warm)
+        node[midway, left=1pt, font=\scriptsize, text=mzVector]{exemplars};
+
+  % cold scored before warm (no leakage)
+  \draw[mzloop=mzPrimary] (cold.north) -- (warm.south)
+        node[midway, right=1pt, font=\scriptsize, text=mzPrimary]{cold first};
+
+  % --- Three scores converge on the router --------------------------------
+  \draw[mzedge] (warm.east) -- (rt.north west);
+  \draw[mzedge] (cold.east) -- (rt.west);
+  \draw[mzedge] (aud.east)  -- (rt.south west);
+
+  % --- Router branches to one of three outcomes ---------------------------
+  \draw[mzedge] (rt.east) -- (aa)
+        node[midway, above, font=\scriptsize, text=mzRouter]{gap\,$\le\tau$};
+  \draw[mzedge] (rt.east) -- (aal)
+        node[midway, above=1pt, font=\scriptsize, text=mzRouter]{cold gap\,$\le\tau_c$};
+  \draw[mzedge] (rt.east) -- (hr)
+        node[midway, below, font=\scriptsize, text=mzRouter]{otherwise};
+
+  % --- persistence + spot-check note --------------------------------------
+  \node[font=\scriptsize, text=mzInk, align=center] (ps)
+        at (11.7,-2.4) {all outcomes persisted;\\10\% of auto-accepts spot-checked};
+  \draw[mzloop=mzInk] (aa.east) to[out=0,in=60] (ps.east);
+  \draw[mzloop=mzInk] (aal.east) to[out=0,in=40] (ps.north east);
+
+  % --- time axis ----------------------------------------------------------
+  \draw[-{Stealth[length=4pt]}, draw=mzRouter!60, line width=0.6pt]
+        (0,-2.6) -- (9.0,-2.6) node[midway, below, font=\scriptsize, text=mzRouter!80]{time};
+
+\end{tikzpicture}

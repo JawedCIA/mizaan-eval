@@ -1,0 +1,20 @@
+[
+  {
+    "draft": {
+      "id": "16ef85ec-8293-477b-aaa7-c16fe89f8453",
+      "rubric": "re-listing-v1",
+      "target_dimension": "Credibility",
+      "cluster_size": 10,
+      "amendment_text": "Reward honest disclosure of limitations and drawbacks, as this enhances the credibility of the listing.",
+      "rationale": "The corrections consistently emphasized the importance of transparent communication regarding limitations, which signals credibility and should be positively reinforced."
+    },
+    "decision": "approve",
+    "decided_by": "human reviewer (author), via interactive gate",
+    "criterion": "faithfully expresses pre-registered rule R1; verbatim-identical to run-1 draft",
+    "ts": 1781358340.7446613
+  },
+  {
+    "note": "swe-workitem-v1: 0 drafts at 0.55 (reproduces runs 1-2 missed-promotion finding).",
+    "ts": 1781358340.744663
+  }
+]

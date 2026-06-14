@@ -1,0 +1,20 @@
+[
+  {
+    "draft": {
+      "id": "d4afa4e0-026f-4684-9e49-66e103898bf4",
+      "rubric": "re-listing-v1",
+      "target_dimension": "Credibility",
+      "cluster_size": 10,
+      "amendment_text": "Reward honest disclosure of limitations and potential drawbacks, as this enhances the overall credibility of the listing.",
+      "rationale": "The corrections consistently emphasized the importance of transparency regarding limitations, indicating that such disclosures should be positively recognized in scoring."
+    },
+    "decision": "approve",
+    "decided_by": "human reviewer (author), via interactive gate",
+    "criterion": "faithfully expresses pre-registered rule R1; consistent with run-1 approval",
+    "ts": 1781356363.507959
+  },
+  {
+    "note": "swe-workitem-v1 produced 0 drafts at CLUSTER_SIMILARITY_THRESHOLD=0.55 (scattered subject domains, no cluster >= 3) \u2014 reproduces run-1 missed-promotion finding.",
+    "ts": 1781356363.5079596
+  }
+]

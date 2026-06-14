@@ -1,0 +1,33 @@
+% Standalone previewer for the TikZ figures — compile THIS to eyeball a
+% single figure quickly without building the whole paper.
+%   pdflatex preview_standalone.tex   (or upload to Overleaf as its own project)
+% Swap the \input line to preview a different figure.
+\documentclass[border=8pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, backgrounds, calc}
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+% --- Mirror of the figure palette/styles from main.tex preamble ----------
+\definecolor{mzPrimary}{HTML}{2563EB}
+\definecolor{mzAuditor}{HTML}{F59E0B}
+\definecolor{mzRouter}{HTML}{475569}
+\definecolor{mzHuman}{HTML}{10B981}
+\definecolor{mzRubric}{HTML}{7C3AED}
+\definecolor{mzVector}{HTML}{0D9488}
+\definecolor{mzInk}{HTML}{1E293B}
+\definecolor{mzFill}{HTML}{F1F5F9}
+\tikzset{
+  mzbox/.style={rounded corners=2pt, draw=#1, line width=0.8pt,
+    fill=#1!7, text=mzInk, align=center, inner sep=5pt, font=\small},
+  mzstore/.style={draw=#1, line width=0.8pt, fill=#1!7, text=mzInk,
+    align=center, inner sep=5pt, font=\small, sharp corners},
+  mzedge/.style={-{Stealth[length=5pt]}, line width=0.8pt, draw=mzInk},
+  mzloop/.style={-{Stealth[length=5pt]}, line width=0.8pt, draw=#1, dashed},
+}
+
+\begin{document}
+% --- Preview Figure 1 (change to fig2_*, fig3_*, fig4_* as built) ---------
+\input{fig1_architecture}
+\end{document}

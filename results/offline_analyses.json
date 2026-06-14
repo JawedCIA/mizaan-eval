@@ -1,0 +1,189 @@
+{
+  "phase": "C (instance learning, pooled runs 1-3)",
+  "n_records": 249,
+  "tau": 1.0,
+  "tau_c_configured": 0.75,
+  "attribution_matrix": {
+    "gapped_cases": 69,
+    "cells": {
+      "tp": 1,
+      "fn": 21,
+      "fp": 5,
+      "tn": 42
+    },
+    "learning_recall": 0.0455,
+    "attribution_miss_rate": 0.9545,
+    "false_attribution_count": 5,
+    "fn_examples": [
+      {
+        "run": 1,
+        "id": "swe-syn-s02",
+        "domain": "swe",
+        "warm": 8.5,
+        "cold": 7.5,
+        "auditor": 6.5,
+        "cold_gap": 1.0
+      },
+      {
+        "run": 1,
+        "id": "swe-syn-s03",
+        "domain": "swe",
+        "warm": 8.5,
+        "cold": 7.5,
+        "auditor": 6.5,
+        "cold_gap": 1.0
+      },
+      {
+        "run": 1,
+        "id": "swe-syn-s04",
+        "domain": "swe",
+        "warm": 8.5,
+        "cold": 8.0,
+        "auditor": 6.5,
+        "cold_gap": 1.5
+      },
+      {
+        "run": 1,
+        "id": "swe-syn-s05",
+        "domain": "swe",
+        "warm": 8.5,
+        "cold": 7.5,
+        "auditor": 6.5,
+        "cold_gap": 1.0
+      },
+      {
+        "run": 1,
+        "id": "swe-syn-s06",
+        "domain": "swe",
+        "warm": 8.5,
+        "cold": 8.0,
+        "auditor": 6.5,
+        "cold_gap": 1.5
+      },
+      {
+        "run": 1,
+        "id": "swe-syn-s07",
+        "domain": "swe",
+        "warm": 8.0,
+        "cold": 7.5,
+        "auditor": 6.5,
+        "cold_gap": 1.0
+      }
+    ],
+    "note": "FN = real learning the router escalated (cold gap > tau_c because the auditor scores the unpolished item harder than the cold primary). This is the auditor-bias / tau_c interaction."
+  },
+  "tau_c_sweep": {
+    "gapped_learning_n": 22,
+    "gapped_not_learning_n": 47,
+    "configured_tau_c": 0.75,
+    "sweep": [
+      {
+        "tau_c": 0.0,
+        "learning_recall": 0.0,
+        "false_attribution": 0.0426
+      },
+      {
+        "tau_c": 0.25,
+        "learning_recall": 0.0,
+        "false_attribution": 0.0426
+      },
+      {
+        "tau_c": 0.5,
+        "learning_recall": 0.0,
+        "false_attribution": 0.0638
+      },
+      {
+        "tau_c": 0.75,
+        "learning_recall": 0.0455,
+        "false_attribution": 0.1064
+      },
+      {
+        "tau_c": 1.0,
+        "learning_recall": 0.5909,
+        "false_attribution": 0.4043
+      },
+      {
+        "tau_c": 1.25,
+        "learning_recall": 0.5909,
+        "false_attribution": 0.4681
+      },
+      {
+        "tau_c": 1.5,
+        "learning_recall": 1.0,
+        "false_attribution": 0.6596
+      },
+      {
+        "tau_c": 1.75,
+        "learning_recall": 1.0,
+        "false_attribution": 0.6596
+      },
+      {
+        "tau_c": 2.0,
+        "learning_recall": 1.0,
+        "false_attribution": 1.0
+      },
+      {
+        "tau_c": 2.25,
+        "learning_recall": 1.0,
+        "false_attribution": 1.0
+      },
+      {
+        "tau_c": 2.5,
+        "learning_recall": 1.0,
+        "false_attribution": 1.0
+      },
+      {
+        "tau_c": 2.75,
+        "learning_recall": 1.0,
+        "false_attribution": 1.0
+      },
+      {
+        "tau_c": 3.0,
+        "learning_recall": 1.0,
+        "false_attribution": 1.0
+      }
+    ],
+    "true_learning_cold_gaps": [
+      0.75,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5,
+      1.5
+    ],
+    "true_learning_cold_gap_median": 1.0
+  },
+  "baseline_reroute": {
+    "n": 249,
+    "baseline_warm_only": {
+      "escalations": 69,
+      "escalation_rate": 0.2771
+    },
+    "counterfactual_tau_c_0.75": {
+      "escalations": 63,
+      "escalation_rate": 0.253,
+      "reviews_saved_vs_baseline": 6
+    },
+    "counterfactual_tau_c_1.0": {
+      "escalations": 37,
+      "escalation_rate": 0.1486,
+      "reviews_saved_vs_baseline": 32
+    }
+  }
+}

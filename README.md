@@ -1,0 +1,129 @@
+# Mizaan — Evaluation Artifacts
+
+Evaluation code, data manifests, and results for the paper:
+
+> **When Disagreement Means Learning (or Bias): Human-Governed Memory
+> Consolidation and Counterfactual Diagnosis in Multi-Agent LLM Scoring**
+> Mohammed Jawed, Mannat AI.
+> arXiv: `TODO-arxiv-id` · Paper PDF: `TODO-link`
+> Repository: <https://github.com/JawedCIA/mizaan-eval>
+> Project: <https://mizaan.mannatai.com/>
+
+This is a **research artifact**, released so the paper's results are
+inspectable and reproducible. It is **not a maintained product** (see
+[Maintenance](#maintenance)).
+
+---
+
+## What you can reproduce, and how much it costs
+
+The artifact is deliberately **two-tier**.
+
+### Tier 1 — Reproduce every paper number and data figure (offline, minutes)
+
+All headline numbers in Section 6 and Figures 5–6 derive from the stored
+per-item results in `results/`, which contain **only item ids, scores, and
+telemetry — no raw item text**. The three analysis scripts are pure
+Python (stdlib + `numpy`/`matplotlib`); they need **no backend, no API key,
+no network**:
+
+```bash
+pip install -r requirements.txt
+python scripts/eval_aggregate.py     # -> results/aggregate.json  (pooled n=3)
+python scripts/eval_offline.py       # -> results/offline_analyses.json
+python scripts/eval_figures.py       # -> figures/fig5_consolidation.pdf, fig6_tauc_sweep.pdf
+```
+
+This tier is the integrity anchor: the paper's claims trace to these files
+regardless of any data-redistribution constraint below.
+
+### Tier 2 — Full re-run from scratch (needs the Mizaan backend + an LLM key)
+
+`scripts/eval_runner.py` replays the pre-registered protocol
+(`EVAL_PROTOCOL.md`) against a **running Mizaan API**, which is a separate
+system (Postgres + pgvector, the FastAPI service, an LLM provider). This tier
+regenerates the `results/` tree. It requires:
+
+- The Mizaan backend: `TODO-mizaan-repo-link`
+- An LLM API key for the target model (see [Models](#models-and-dependencies))
+- Reconstructed datasets (see [Data](#data-and-licensing)) — the SWE NEUTRAL
+  split is re-fetchable from public GitHub; the RE NEUTRAL split is **not
+  redistributable** (commercial source).
+
+Approximate cost/time per full run (108 items × phases A–F, `gpt-4o-mini`,
+`EVAL_WORKERS=5`): **~25 min and a few US$ in API usage**; the paper pools
+three runs.
+
+---
+
+## Repository layout
+
+```
+.
+├── README.md                  # this file
+├── REPRODUCIBILITY.md         # every figure/number -> exact script + input + output
+├── EVAL_PROTOCOL.md           # the pre-registered evaluation design (frozen)
+├── PRE_RELEASE_CHECKLIST.md   # release-readiness checklist + status
+├── LICENSE                    # Apache-2.0 (code)
+├── DATA_LICENSE               # CC-BY-4.0 (author-created data)
+├── requirements.txt
+├── scripts/                   # eval harness + analysis + single-case demos
+├── data/                      # authored datasets (with text) + stripped manifests
+├── results/                   # per-run JSONL + pooled/offline/generalization JSON
+└── figures/                   # TikZ sources (fig 1–4) + rendered data figs (5–6)
+```
+
+See `data/README.md` for the dataset details and `REPRODUCIBILITY.md` for the
+full provenance map.
+
+---
+
+## Data and licensing
+
+Code is **Apache-2.0** (`LICENSE`). Author-created data is **CC-BY-4.0**
+(`DATA_LICENSE`). The two non-author data splits are handled to respect their
+sources:
+
+| Split | Origin | What ships here |
+|---|---|---|
+| Authored CORRECT / HOLDOUT_SIM / synthetic NEUTRAL | written by the author | full text (`data/synthetic_*.jsonl`), CC-BY-4.0 |
+| SWE NEUTRAL (38) | public GitHub issues | **references + SHA-256 hashes only** (`data/swe_neutral_manifest.jsonl`); re-fetch with `scripts/eval_prepare_datasets.py` |
+| RE NEUTRAL (10) | a **commercial** listings export | **metadata only** (`data/re_commercial_manifest.jsonl`); the source text is **not redistributed** |
+
+`github_raw.json` and the commercial spreadsheet are intentionally **not**
+included. Re-fetched GitHub text may drift from the originals (issues can be
+edited or deleted); the per-item `text_sha256` lets you detect any drift.
+
+---
+
+## Models and dependencies
+
+- **Main result:** `gpt-4o-mini` (chat) + `text-embedding-3-small` (1536-dim).
+- **Robustness runs:** `gpt-4.1` and `claude-sonnet-4-6` (phases A–C only).
+- Retrieval / cluster similarity thresholds: `0.55` (see `EVAL_PROTOCOL.md`).
+- Python ≥ 3.10. Tier-1 deps: `numpy`, `matplotlib`. Tier-2 client deps:
+  `httpx`, `openpyxl`. Pinned in `requirements.txt`.
+
+Model behaviour changes over time; exact byte-level reproduction of Tier 2 is
+not guaranteed across model snapshots. Tier 1 is fully deterministic.
+
+---
+
+## Citation
+
+```bibtex
+@misc{jawed2026disagreement,
+  title  = {When Disagreement Means Learning (or Bias): Human-Governed Memory
+            Consolidation and Counterfactual Diagnosis in Multi-Agent LLM Scoring},
+  author = {Jawed, Mohammed},
+  year   = {2026},
+  note   = {arXiv:TODO}
+}
+```
+
+## Maintenance
+
+This repository is a frozen research artifact accompanying the paper. It is
+provided as-is, **without ongoing maintenance, support, or guarantee of
+compatibility** with future model or dependency versions. Issues and pull
+requests may not be addressed.

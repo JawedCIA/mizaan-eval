@@ -1,0 +1,36 @@
+% Figure 4 — Asymmetric learning channels (instance vs policy).
+% Requires the mz* styles from main.tex preamble.
+\begin{tikzpicture}[node distance=6mm]
+
+  % --- lane labels (left) -------------------------------------------------
+  \node[text=mzVector, font=\small\bfseries, align=center] (lab1) at (-2.4,1.5)
+       {INSTANCE\\\footnotesize fast $\cdot$ per-case\\\footnotesize primary-only};
+  \node[text=mzRubric, font=\small\bfseries, align=center] (lab2) at (-2.4,-1.5)
+       {POLICY\\\footnotesize slow $\cdot$ general\\\footnotesize both agents};
+
+  % --- instance channel (top, teal) --------------------------------------
+  \node[mzbox=mzHuman]    (ic1) at (0.4,1.5)  {Human\\correction};
+  \node[mzstore=mzVector] (ic2) at (3.4,1.5)  {Re-embed\\$+$ store};
+  \node[mzbox=mzVector]   (ic3) at (6.4,1.5)  {Retrieved\\exemplar};
+  \node[mzbox=mzPrimary]  (ic4) at (9.6,1.5)  {Primary\\(warm only)};
+  \draw[mzedge] (ic1) -- (ic2);
+  \draw[mzedge] (ic2) -- (ic3);
+  \draw[mzedge] (ic3) -- (ic4);
+
+  % --- policy channel (bottom, purple) -----------------------------------
+  \node[mzbox=mzRubric] (pc1) at (0.4,-1.5)  {Cluster\\$k\ge3$};
+  \node[mzbox=mzRubric] (pc2) at (3.4,-1.5)  {LLM drafts\\amendment};
+  \node[mzbox=mzHuman]  (pc3) at (6.4,-1.5)  {Human\\approves};
+  \node[mzbox=mzRubric] (pc4) at (9.6,-1.5)  {Rubric v$+$1\\(both agents)};
+  \draw[mzedge] (pc1) -- (pc2);
+  \draw[mzedge] (pc2) -- (pc3);
+  \draw[mzedge] (pc3) -- (pc4);
+
+  % --- cross-links: corrections accumulate into clusters; exemplars retired
+  \draw[mzloop=mzRubric] (ic2.south) -- (pc1.north)
+        node[midway, right=1pt, font=\scriptsize, text=mzRubric]{accumulate};
+  \draw[mzloop=mzRouter] (pc4.north) to[out=120,in=-20]
+        node[midway, right=1pt, font=\scriptsize, text=mzRouter,
+             fill=white, inner sep=1pt]{retire exemplars} (ic3.south east);
+
+\end{tikzpicture}

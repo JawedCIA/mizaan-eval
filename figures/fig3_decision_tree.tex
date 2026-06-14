@@ -1,0 +1,28 @@
+% Figure 3 — Counterfactual routing decision tree (visualizes Algorithm 1).
+% Requires the mz* styles from main.tex preamble.
+\begin{tikzpicture}
+  % local style: decision diamond
+  \tikzset{mzdiam/.style={diamond, aspect=2.4, draw=mzRouter, line width=0.8pt,
+      fill=mzRouter!8, text=mzInk, align=center, inner sep=1pt, font=\small}}
+
+  \node[mzdiam] (d1) at (0,0) {warm gap\\$\le\tau$?};
+  \node[mzdiam] (d2) at (0,-2.7) {cold gap\\$\le\tau_c$?};
+
+  \node[mzbox=mzPrimary] (aa)  at (-3.6,0)    {\textsc{Auto-accept}\\final $=$ warm};
+  \node[mzbox=mzPrimary] (aal) at (-3.6,-2.7) {\textsc{Auto-accept}\\\textsc{learned}};
+  \node[mzbox=mzHuman]   (hr)  at (0,-5.1)    {\textsc{Human-required}\\(all three scores\\$+$ exemplars)};
+
+  \node[mzbox=mzInk, align=center] (spot) at (3.6,-1.35)
+       {10\% spot-check\\$\to$ human review\\(score stands)};
+
+  % decision edges
+  \draw[mzedge] (d1) -- (aa) node[midway, above, font=\scriptsize]{yes};
+  \draw[mzedge] (d1) -- (d2) node[midway, right, font=\scriptsize]{no};
+  \draw[mzedge] (d2) -- (aal) node[midway, above, font=\scriptsize]{yes};
+  \draw[mzedge] (d2) -- (hr) node[midway, right, font=\scriptsize]{no};
+
+  % deterministic spot-check off both auto-accept outcomes
+  \draw[mzloop=mzInk] (aa.east) to[out=0,in=120] (spot.north);
+  \draw[mzloop=mzInk] (aal.east) to[out=20,in=-120] (spot.south);
+
+\end{tikzpicture}

@@ -1,0 +1,39 @@
+{
+  "routing": {
+    "total_scored": 289,
+    "total_routed": 289,
+    "legacy_unrouted": 0,
+    "path_counts": {
+      "AUTO_ACCEPT_LEARNED": 3,
+      "HUMAN_REQUIRED": 56,
+      "AUTO_ACCEPT": 230
+    },
+    "escalation_rate": 0.1938,
+    "auto_accept_rate": 0.7958,
+    "learned_accept_rate": 0.0104
+  },
+  "canary": {
+    "auto_accepted": 233,
+    "spot_checks_sampled": 23,
+    "auto_accepted_reviewed": 25,
+    "auto_accepted_overturned": 25,
+    "overturn_rate": 1.0
+  },
+  "inter_agent_error_correlation": {
+    "corrected_cases": 30,
+    "correlation": 0.8281,
+    "note": null
+  },
+  "correction_age": {
+    "count": 30,
+    "min_days": 0.0,
+    "median_days": 0.0,
+    "max_days": 0.0,
+    "buckets": {
+      "week": 30,
+      "month": 0,
+      "quarter": 0,
+      "older": 0
+    }
+  }
+}

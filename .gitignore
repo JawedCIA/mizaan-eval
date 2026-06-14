@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Secrets / local config — never commit
+.env
+.env.*
+*.key
+
+# Non-redistributable data — defensive guard (must never be committed)
+**/github_raw.json
+**/dubai_luxury_listings.xlsx
+**/swe.jsonl
+**/re.jsonl
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

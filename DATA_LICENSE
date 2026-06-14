@@ -1,0 +1,43 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+=========================================================
+
+The author-created data in this repository is licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0).
+
+Scope of this license
+---------------------
+This license applies ONLY to data files authored by the paper's author:
+
+    data/synthetic_swe.jsonl
+    data/synthetic_re.jsonl
+
+and to the authored override rules, amendment decisions, and metadata recorded
+under results/ (e.g., phase_D_decisions.json).
+
+It does NOT apply to:
+  - Third-party content. The SWE NEUTRAL split references public GitHub issues
+    whose text is owned by its respective authors; only references and content
+    hashes are distributed here (data/swe_neutral_manifest.jsonl). Re-fetched
+    text remains subject to the original posters' rights and GitHub's terms.
+  - The RE NEUTRAL split, which derives from a commercial source and is NOT
+    redistributed; only non-identifying metadata is included
+    (data/re_commercial_manifest.jsonl).
+
+Code in this repository is licensed separately under Apache-2.0 (see LICENSE).
+
+License text
+------------
+You are free to share and adapt the licensed material for any purpose, even
+commercially, provided you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+The full legal code is available at:
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+A human-readable summary is at:
+    https://creativecommons.org/licenses/by/4.0/
+
+Attribution
+-----------
+When using the licensed data, please cite the accompanying paper (see the
+Citation section in README.md).

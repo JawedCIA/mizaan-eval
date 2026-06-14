@@ -1,0 +1,56 @@
+% Figure 1 — System architecture. Requires the mz* colors/styles defined in
+% main.tex preamble. Included via \input inside a figure environment.
+% Layout uses absolute coordinates (cm) for stable rendering.
+\begin{tikzpicture}[node distance=0pt]
+
+  % --- Main pipeline ------------------------------------------------------
+  \node[mzbox=mzInk]      (work)    at (0,0)        {Work\\item};
+  \node[mzstore=mzVector] (retr)    at (2.7,0.9)    {Retrieval\\(pgvector)};
+  \node[mzbox=mzPrimary]  (primary) at (5.7,0.9)    {\textbf{Primary}\\cold\,+\,warm};
+  \node[mzbox=mzAuditor]  (auditor) at (4.0,-1.3)   {\textbf{Auditor}\\independent};
+  \node[mzbox=mzRouter]   (router)  at (8.7,0)       {Counterfactual\\router};
+
+  % rubric feeds both agents
+  \node[mzbox=mzRubric]   (rubric)  at (5.7,3.0)     {\textbf{Rubric} (versioned)\\criteria for both agents};
+
+  % outcomes
+  \node[mzbox=mzInk]      (auto)    at (11.6,1.3)    {Auto-accept};
+  \node[mzbox=mzInk]      (learned) at (11.6,0.0)    {Auto-accept\\(learned)};
+  \node[mzbox=mzHuman]    (human)   at (11.6,-1.4)   {Human\\review};
+
+  % --- Learning-loop band (bottom) ---------------------------------------
+  \node[mzbox=mzHuman]    (fb)      at (8.7,-3.2)    {Human\\correction};
+  \node[mzstore=mzVector] (cstore)  at (5.2,-3.2)    {Correction store\\(enriched embed.)};
+  \node[mzbox=mzRubric]   (cluster) at (1.6,-3.2)    {Cluster\,$\to$\,draft\\$\to$\,human approve};
+
+  % --- Pipeline edges -----------------------------------------------------
+  \draw[mzedge] (work) -- (retr);
+  \draw[mzedge] (retr) -- (primary);
+  \draw[mzedge] (work.south) |- (auditor.west);   % auditor gets the item, NOT exemplars
+  \draw[mzedge] (primary.east) -- (router.north west);
+  \draw[mzedge] (auditor.east) -- (router.south west);
+  \draw[mzedge] (router) -- (auto);
+  \draw[mzedge] (router) -- (learned);
+  \draw[mzedge] (router) -- (human);
+
+  % rubric to both agents (policy reaches everyone)
+  \draw[mzloop=mzRubric] (rubric.south) -- (primary.north);
+  \draw[mzloop=mzRubric] (rubric.west) -| (auditor.north);
+
+  % --- Instance channel (teal, dashed): correction -> store -> retrieval --
+  \draw[mzedge] (human.south) |- (fb.east);
+  \draw[mzloop=mzVector] (fb) -- (cstore)
+        node[midway, below, font=\scriptsize, text=mzVector,
+             fill=white, inner sep=1.5pt]{instance channel};
+  \draw[mzloop=mzVector] (cstore.north) |- (retr.south west);
+
+  % --- Policy channel (purple, dashed): cluster -> approve -> rubric ------
+  \draw[mzloop=mzRubric] (cstore) -- (cluster);
+  \draw[mzloop=mzRubric] (cluster.north) |- (rubric.west)
+        node[pos=0.75, above, font=\scriptsize, text=mzRubric,
+             fill=white, inner sep=1.5pt]{policy channel: amendment $\to$ v+1};
+  \draw[mzloop=mzRouter] (cluster.south) to[out=-40,in=-140]
+        node[midway, below, font=\scriptsize, text=mzRouter,
+             fill=white, inner sep=1.5pt]{retire promoted exemplars} (cstore.south);
+
+\end{tikzpicture}

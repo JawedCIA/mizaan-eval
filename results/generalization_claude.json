@@ -1,0 +1,52 @@
+{
+  "gpt-4o-mini_pooled": {
+    "agreement_rate": {
+      "mean": 0.883,
+      "sd": 0.004
+    },
+    "mean_gap": {
+      "mean": 0.705,
+      "sd": 0.019
+    },
+    "sim_delta": {
+      "mean": 0.326,
+      "sd": 0.011
+    },
+    "neutral_delta": {
+      "mean": 0.122,
+      "sd": 0.007
+    },
+    "learning_separation": {
+      "mean": 0.204,
+      "sd": 0.006
+    },
+    "re_leak": {
+      "mean": 0.353,
+      "sd": 0.02
+    },
+    "swe_sim": {
+      "mean": 0.381,
+      "sd": 0.024
+    }
+  },
+  "gpt-4.1_run4": {
+    "agreement_rate": 0.917,
+    "mean_gap": 0.399,
+    "sim_delta": 0.164,
+    "neutral_delta": -0.047,
+    "learning_separation": 0.211,
+    "re_leak": -0.135,
+    "swe_sim": 0.587
+  },
+  "claude-sonnet-4-6_run5": {
+    "agreement_rate": 0.954,
+    "mean_gap": 0.344,
+    "sim_delta": 0.412,
+    "neutral_delta": 0.102,
+    "learning_separation": 0.31,
+    "re_leak": 0.295,
+    "swe_sim": 0.51,
+    "n_A": 108,
+    "n_C": 83
+  }
+}

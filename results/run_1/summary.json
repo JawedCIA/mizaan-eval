@@ -1,0 +1,352 @@
+{
+  "run": 1,
+  "phase_A": {
+    "CORRECT": {
+      "disagreement": {
+        "n": 25,
+        "mean": 0.616,
+        "median": 0.5,
+        "min": 0.0,
+        "max": 2.0
+      },
+      "learning_delta": {
+        "n": 25,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paths": {
+        "AUTO_ACCEPT": 21,
+        "AUTO_ACCEPT_LEARNED": 0,
+        "HUMAN_REQUIRED": 4
+      },
+      "cold": {
+        "n": 25,
+        "mean": 8.044,
+        "median": 8.1,
+        "min": 6.5,
+        "max": 8.5
+      },
+      "warm": {
+        "n": 25,
+        "mean": 8.044,
+        "median": 8.1,
+        "min": 6.5,
+        "max": 8.5
+      },
+      "auditor": {
+        "n": 25,
+        "mean": 7.5,
+        "median": 7.5,
+        "min": 5.5,
+        "max": 8.5
+      },
+      "exemplars": {
+        "n": 25,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "HOLDOUT_SIM": {
+      "disagreement": {
+        "n": 25,
+        "mean": 0.724,
+        "median": 0.6,
+        "min": 0.0,
+        "max": 2.5
+      },
+      "learning_delta": {
+        "n": 25,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paths": {
+        "AUTO_ACCEPT": 20,
+        "AUTO_ACCEPT_LEARNED": 0,
+        "HUMAN_REQUIRED": 5
+      },
+      "cold": {
+        "n": 25,
+        "mean": 7.98,
+        "median": 8.0,
+        "min": 7.5,
+        "max": 8.5
+      },
+      "warm": {
+        "n": 25,
+        "mean": 7.98,
+        "median": 8.0,
+        "min": 7.5,
+        "max": 8.5
+      },
+      "auditor": {
+        "n": 25,
+        "mean": 7.304,
+        "median": 7.5,
+        "min": 5.5,
+        "max": 8.5
+      },
+      "exemplars": {
+        "n": 25,
+        "mean": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "NEUTRAL": {
+      "disagreement": {
+        "n": 58,
+        "mean": 0.707,
+        "median": 1.0,
+        "min": 0.0,
+        "max": 2.0
+      },
+      "learning_delta": {
+        "n": 58,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paths": {
+        "AUTO_ACCEPT": 54,
+        "AUTO_ACCEPT_LEARNED": 0,
+        "HUMAN_REQUIRED": 4
+      },
+      "cold": {
+        "n": 58,
+        "mean": 6.529,
+        "median": 6.5,
+        "min": 2.5,
+        "max": 9.1
+      },
+      "warm": {
+        "n": 58,
+        "mean": 6.529,
+        "median": 6.5,
+        "min": 2.5,
+        "max": 9.1
+      },
+      "auditor": {
+        "n": 58,
+        "mean": 5.822,
+        "median": 5.5,
+        "min": 2.5,
+        "max": 9.0
+      },
+      "exemplars": {
+        "n": 58,
+        "mean": 0,
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    }
+  },
+  "phase_C": {
+    "HOLDOUT_SIM": {
+      "disagreement": {
+        "n": 25,
+        "mean": 0.956,
+        "median": 1.0,
+        "min": 0.0,
+        "max": 2.0
+      },
+      "learning_delta": {
+        "n": 25,
+        "mean": 0.328,
+        "median": 0.3,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "paths": {
+        "AUTO_ACCEPT": 16,
+        "AUTO_ACCEPT_LEARNED": 0,
+        "HUMAN_REQUIRED": 9
+      },
+      "cold": {
+        "n": 25,
+        "mean": 7.972,
+        "median": 8.0,
+        "min": 7.5,
+        "max": 8.5
+      },
+      "warm": {
+        "n": 25,
+        "mean": 8.3,
+        "median": 8.5,
+        "min": 7.5,
+        "max": 8.5
+      },
+      "auditor": {
+        "n": 25,
+        "mean": 7.344,
+        "median": 7.5,
+        "min": 6.5,
+        "max": 8.5
+      },
+      "exemplars": {
+        "n": 25,
+        "mean": 2.36,
+        "median": 1,
+        "min": 0,
+        "max": 5
+      }
+    },
+    "NEUTRAL": {
+      "disagreement": {
+        "n": 58,
+        "mean": 0.907,
+        "median": 1.0,
+        "min": 0.0,
+        "max": 2.3
+      },
+      "learning_delta": {
+        "n": 58,
+        "mean": 0.128,
+        "median": 0.0,
+        "min": -0.5,
+        "max": 1.4
+      },
+      "paths": {
+        "AUTO_ACCEPT": 46,
+        "AUTO_ACCEPT_LEARNED": 2,
+        "HUMAN_REQUIRED": 10
+      },
+      "cold": {
+        "n": 58,
+        "mean": 6.56,
+        "median": 6.5,
+        "min": 2.0,
+        "max": 9.0
+      },
+      "warm": {
+        "n": 58,
+        "mean": 6.688,
+        "median": 6.5,
+        "min": 2.0,
+        "max": 9.0
+      },
+      "auditor": {
+        "n": 58,
+        "mean": 5.798,
+        "median": 5.5,
+        "min": 2.5,
+        "max": 9.0
+      },
+      "exemplars": {
+        "n": 58,
+        "mean": 1.379,
+        "median": 0.0,
+        "min": 0,
+        "max": 5
+      }
+    }
+  },
+  "phase_E": {
+    "HOLDOUT_SIM": {
+      "disagreement": {
+        "n": 25,
+        "mean": 0.972,
+        "median": 1.0,
+        "min": 0.0,
+        "max": 3.0
+      },
+      "learning_delta": {
+        "n": 25,
+        "mean": 0.264,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "paths": {
+        "AUTO_ACCEPT": 16,
+        "AUTO_ACCEPT_LEARNED": 1,
+        "HUMAN_REQUIRED": 8
+      },
+      "cold": {
+        "n": 25,
+        "mean": 8.04,
+        "median": 8.2,
+        "min": 7.5,
+        "max": 9.0
+      },
+      "warm": {
+        "n": 25,
+        "mean": 8.304,
+        "median": 8.4,
+        "min": 7.5,
+        "max": 9.0
+      },
+      "auditor": {
+        "n": 25,
+        "mean": 7.372,
+        "median": 7.5,
+        "min": 5.5,
+        "max": 8.5
+      },
+      "exemplars": {
+        "n": 25,
+        "mean": 0.4,
+        "median": 0,
+        "min": 0,
+        "max": 1
+      }
+    },
+    "NEUTRAL": {
+      "disagreement": {
+        "n": 58,
+        "mean": 0.733,
+        "median": 1.0,
+        "min": 0.0,
+        "max": 2.0
+      },
+      "learning_delta": {
+        "n": 58,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paths": {
+        "AUTO_ACCEPT": 55,
+        "AUTO_ACCEPT_LEARNED": 0,
+        "HUMAN_REQUIRED": 3
+      },
+      "cold": {
+        "n": 58,
+        "mean": 6.478,
+        "median": 6.5,
+        "min": 2.5,
+        "max": 9.2
+      },
+      "warm": {
+        "n": 58,
+        "mean": 6.478,
+        "median": 6.5,
+        "min": 2.5,
+        "max": 9.2
+      },
+      "auditor": {
+        "n": 58,
+        "mean": 5.745,
+        "median": 5.5,
+        "min": 2.5,
+        "max": 9.0
+      },
+      "exemplars": {
+        "n": 58,
+        "mean": 0,
+        "median": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    }
+  }
+}
