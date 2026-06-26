@@ -4,8 +4,8 @@ Evaluation code, data manifests, and results for the paper:
 
 > **When Disagreement Means Learning (or Bias): Human-Governed Memory
 > Consolidation and Counterfactual Diagnosis in Multi-Agent LLM Scoring**
-> Mohammed Jawed, Mannat AI.
-> arXiv: `TODO-arxiv-id` · Paper PDF: `TODO-link`
+> Mohammed Jawed, Mannat AI Labs.
+> Preprint forthcoming on arXiv (identifier and PDF link added once assigned).
 > Repository: <https://github.com/JawedCIA/mizaan-eval>
 > Project: <https://mizaan.mannatai.com/>
 
@@ -44,7 +44,10 @@ regardless of any data-redistribution constraint below.
 system (Postgres + pgvector, the FastAPI service, an LLM provider). This tier
 regenerates the `results/` tree. It requires:
 
-- The Mizaan backend: `TODO-mizaan-repo-link`
+- The Mizaan backend (not publicly released; Tier-2 is reproducible by the
+  author or on request). The exact scoring, auditor, and amendment prompts are
+  included in `prompts/`, so the scoring behaviour is fully specified here even
+  without the backend.
 - An LLM API key for the target model (see [Models](#models-and-dependencies))
 - Reconstructed datasets (see [Data](#data-and-licensing)) — the SWE NEUTRAL
   split is re-fetchable from public GitHub; the RE NEUTRAL split is **not
@@ -63,7 +66,6 @@ three runs.
 ├── README.md                  # this file
 ├── REPRODUCIBILITY.md         # every figure/number -> exact script + input + output
 ├── EVAL_PROTOCOL.md           # the pre-registered evaluation design (frozen)
-├── PRE_RELEASE_CHECKLIST.md   # release-readiness checklist + status
 ├── LICENSE                    # Apache-2.0 (code)
 ├── DATA_LICENSE               # CC-BY-4.0 (author-created data)
 ├── requirements.txt
@@ -128,7 +130,7 @@ not guaranteed across model snapshots. Tier 1 is fully deterministic.
             Consolidation and Counterfactual Diagnosis in Multi-Agent LLM Scoring},
   author = {Jawed, Mohammed},
   year   = {2026},
-  note   = {arXiv:TODO}
+  note   = {Preprint; arXiv identifier forthcoming}
 }
 ```
 

@@ -95,7 +95,8 @@ python scripts/eval_figures.py
 
 ## Tier-2 full re-run (summary)
 
-1. Stand up the Mizaan backend (`TODO-mizaan-repo-link`): Postgres + pgvector,
+1. Stand up the Mizaan backend (not publicly released — available from the
+   author on request): Postgres + pgvector,
    the API, `.env` with `DEFAULT_LLM_MODEL=gpt-4o-mini`, `EMBEDDING_DIM=1536`,
    `RETRIEVAL_SIMILARITY_THRESHOLD=0.55`, `CLUSTER_SIMILARITY_THRESHOLD=0.55`.
 2. Reconstruct datasets (`scripts/eval_prepare_datasets.py`; RE NEUTRAL needs
